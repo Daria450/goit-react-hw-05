@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { SearchBar } from '../../components/SearchBar/SearchBar';
 import { searchMovies } from '../../services/tmdb-api';
-import MovieList from '../../components/TrendingMovies/MovieList';
+import MovieList from '../../components/MovieList/MovieList';
+
 
 
 
@@ -40,9 +41,11 @@ const Movies = () => {
 
     return (
         <>
+
             <SearchBar handleChangeQuery={handleChangeQuery} />
 
             {movies.length > 0 && <MovieList movies={movies} />}
+
 
         </>
     )

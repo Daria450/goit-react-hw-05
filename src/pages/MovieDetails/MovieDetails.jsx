@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
 import { fetchMovieById } from '../../services/tmdb-api';
+import s from './MovieDetailc.module.css'
+import clsx from 'clsx';
 
 const MovieDetails = () => {
     const { movieId } = useParams();
@@ -23,26 +25,40 @@ const MovieDetails = () => {
 
     }
         , [movieId])
-
+    const buildLinkClass = ({ isActive }) => {
+        return clsx(s.navlink, isActive && s.active);
+    };
 
     return (
         <>
-            <Link to='/' >Go Back</Link>
-            <img src={'https://image.tmdb.org/t/p/w500/' + movie.backdrop_path} alt={movie.title} width='300' />
-            <h2>{movie.title}</h2>
+            <Link className={s.link} to='/' >Go Back</Link>
+            <div className={s.container}>
+                <img src={'https://image.tmdb.org/t/p/w500/' + movie.backdrop_path} alt={movie.title} />
+                <div className={s.text}>
+                    <h2>{movie.title}</h2>
 
-            <p>User score: {Math.round(movie.vote_average * 10)}%</p>
-            <h3>Overview</h3>
-            <p>{movie.overview}</p>
-            <h3>Genres</h3>
-            {movie.genres && <p>{movie.genres.map(item => item.name).join(', ')}</p>}
+                    <p>User score: {Math.round(movie.vote_average * 10)}%</p>
+                    <h3>Overview</h3>
+                    <p>{movie.overview}</p>
+                    <h3>Genres</h3>
+                    {movie.genres && <p>{movie.genres.map(item => item.name).join(', ')}</p>}
+                </div>
+            </div>
+            <div className={s.extra}>
+                <h3>Additional information</h3>
+                <nav className={s.navlist}>
+                    <NavLink className={buildLinkClass} to='cast' >
+                        Cast
+                    </NavLink>
+                    <NavLink className={buildLinkClass} to='reviews' >
+                        Reviews
+                    </NavLink>
+                </nav>
 
-            <h3>Additional information</h3>
-            <ul>
-                <li><Link to='cast' >Cast</Link></li>
-                <li> <Link to='reviews' >Reviews</Link></li>
-            </ul>
-            <Outlet />
+
+                <Outlet />
+            </div>
+
         </>
     )
 }

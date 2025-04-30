@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { fetchMovieReviews } from '../../services/tmdb-api';
 import { useParams } from 'react-router-dom';
+import s from './Reviews.module.css'
 
 const Reviews = () => {
 
@@ -26,12 +27,12 @@ const Reviews = () => {
 
     return (
         <>
-            <ul>
+            <ul className={s.list}>
                 {reviews && reviews.length > 0 ? (
                     reviews.map((item) => (
                         <li key={item.id}>
-                            <p>{item.content}</p>
-                            <p>{item.author_details.username}</p>
+                            <p className={s.review}>{item.content}</p>
+                            <p className={s.author}>{item.author_details.username}</p>
                         </li>
                     ))
                 ) : (

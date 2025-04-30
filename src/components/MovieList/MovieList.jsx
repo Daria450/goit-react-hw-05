@@ -1,19 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import s from './MovieList.module.css'
 
 
 const MovieList = ({ movies }) => {
     return (
         <>
 
-            <ul>
+            <ul className={s.list}>
                 {movies.map((item) => (
-                    <li key={item.id}>
-                        <Link to={'/movies/' + item.id.toString()} >
+                    <li className={s.li} key={item.id}>
+                        <Link className={s.link} to={'/movies/' + item.id.toString()} >
                             <div>
                                 <img src={'https://image.tmdb.org/t/p/w500/' + item.backdrop_path} alt={item.title} width='200' />
                             </div>
-                            {item.title}
+                            <p> {item.title}</p>
+
                         </Link>
                     </li>
                 ))}

@@ -1,0 +1,36 @@
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    row-gap: 15px;
+    padding: 0 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+
+.li {
+    background-color: rgb(218, 218, 218);
+    border-radius: 15px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    box-shadow: 5px 5px 5px gray;
+    width: 200px;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+
+}
+
+.link>p {
+    padding: 0 10px;
+}

@@ -1,0 +1,48 @@
+.container {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.container>img {
+    max-width: 500px;
+    max-height: fit-content;
+}
+
+.text {
+    max-width: calc(100% - 500px - 20px);
+}
+
+.link {
+    margin: 30px;
+}
+
+.extra {
+    padding: 0 30px;
+}
+
+.navlist {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 30px;
+
+}
+
+.navlink {
+    text-decoration: none;
+    color: black;
+    margin: 0;
+
+    &:hover {
+        color: rgb(206, 30, 30);
+        cursor: pointer;
+    }
+}
+
+.active {
+    color: rgb(206, 30, 30);
+}

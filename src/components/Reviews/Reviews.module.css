@@ -1,0 +1,20 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.author {
+    font-weight: 700;
+}
+
+.review {
+    margin-bottom: 15px;
+}
+
+.list>li {
+    background-color: rgb(236, 236, 236);
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px gray;
+    padding: 20px;
+}

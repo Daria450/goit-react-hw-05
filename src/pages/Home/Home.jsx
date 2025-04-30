@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import MovieList from '../../components/TrendingMovies/MovieList'
+import MovieList from '../../components/MovieList/MovieList'
 import { fetchTrendingMovies } from '../../services/tmdb-api';
+import s from './Home.module.css'
 
 const Home = () => {
 
@@ -26,7 +27,7 @@ const Home = () => {
 
     return (
         <>
-            <h2> Trending Today</h2>
+            <h2 className={s.h2}> Trending Today</h2>
             <MovieList movies={trendingMovies} />
         </>
     )

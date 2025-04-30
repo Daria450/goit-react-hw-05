@@ -23,9 +23,10 @@ export const SearchBar = ({ handleChangeQuery }) => {
             <Formik onSubmit={handleSubmit} initialValues={initialValues}>
                 <Form className={s.form}>
                     <label className={s.label} htmlFor="query">
-                        <button className={s.button} type='submit'><IoIosSearch /></button>
+
                         <Field className={s.input} type="text" name="query" placeholder='Search movies'
                         />
+                        <button className={s.button} type='submit'><IoIosSearch /></button>
                     </label>
                 </Form>
             </Formik>
