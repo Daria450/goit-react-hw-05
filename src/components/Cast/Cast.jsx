@@ -25,14 +25,14 @@ const Cast = () => {
         <>
             <ul className={s.list}>
                 {
-                    cast.map((item) => (<li key={item.id}>
+                    cast.map((item) => (<li key={`${item.id}-${item.character}`}>
                         <img src={'https://image.tmdb.org/t/p/w500/' + item.profile_path} alt={item.name} width='150' />
                         <p>{item.name}</p>
                         <p>Character: {item.character}</p>
 
                     </li>))
                 }
-            </ul>
+            </ul >
         </>
     )
 }

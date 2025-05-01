@@ -8,13 +8,16 @@ export const SearchBar = ({ handleChangeQuery }) => {
     const initialValues = {
         query: '',
     };
+
     const handleSubmit = (values, options) => {
         handleChangeQuery(values.query);
         if (!values.query.trim()) {
             toast.error("The field cannot be empty");
         };
         options.resetForm();
+
     }
+
 
 
     return (

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react'
+import { Link, NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { fetchMovieById } from '../../services/tmdb-api';
 import s from './MovieDetailc.module.css'
 import clsx from 'clsx';
@@ -28,10 +28,11 @@ const MovieDetails = () => {
     const buildLinkClass = ({ isActive }) => {
         return clsx(s.navlink, isActive && s.active);
     };
-
+    const location = useLocation();
+    const goBackRef = useRef(location.state ?? '/')
     return (
         <>
-            <Link className={s.link} to='/' >Go Back</Link>
+            <Link className={s.link} to={goBackRef.current} >Go Back</Link>
             <div className={s.container}>
                 <img src={'https://image.tmdb.org/t/p/w500/' + movie.backdrop_path} alt={movie.title} />
                 <div className={s.text}>

@@ -16,6 +16,17 @@
     max-width: calc(100% - 500px - 20px);
 }
 
+@media screen and (max-width: 992px) {
+    .text {
+        max-width: 100%;
+    }
+
+    .container>img {
+        max-width: 100%;
+        max-height: fit-content;
+    }
+}
+
 .link {
     margin: 30px;
 }

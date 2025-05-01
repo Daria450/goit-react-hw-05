@@ -2,12 +2,15 @@
 import { Routes, Route, NavLink } from "react-router-dom";
 import s from './App.module.css';
 import Home from "./pages/Home/Home";
-import Movies from "./pages/Movies/Movies";
 import NotFound from "./pages/NotFound/NotFound";
 import clsx from "clsx";
-import MovieDetails from "./pages/MovieDetails/MovieDetails";
-import Cast from "./components/Cast/Cast";
-import Reviews from "./components/Reviews/Reviews";
+import { lazy, Suspense } from "react";
+import Loader from "./components/Loader/Loader";
+
+const Movies = lazy(() => import("./pages/Movies/Movies"));
+const MovieDetails = lazy(() => import("./pages/MovieDetails/MovieDetails"));
+const Cast = lazy(() => import("./components/Cast/Cast"));
+const Reviews = lazy(() => import("./components/Reviews/Reviews"));
 
 
 function App() {
@@ -21,6 +24,7 @@ function App() {
 
   return (
     <>
+      <Suspense fallback={<Loader />} />
       <nav className={s.nav}>
         <NavLink className={buildLinkClass} to="/" >
           Home

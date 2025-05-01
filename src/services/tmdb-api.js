@@ -17,8 +17,8 @@ export async function fetchTrendingMovies() {
     return response.data;
 }
 
-export async function searchMovies(query) {
-    const response = await axios.get(`${baseUrl}/search/movie?query=${query}`, options);
+export async function searchMovies(query, page, signal) {
+    const response = await axios.get(`${baseUrl}/search/movie?query=${query}&page=${page}`, options, { signal });
     return response.data;
 }
 
