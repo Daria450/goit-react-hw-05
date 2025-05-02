@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MovieList from '../../components/MovieList/MovieList'
 import { fetchTrendingMovies } from '../../services/tmdb-api';
-import s from './Home.module.css'
+import s from './HomePage.module.css'
 
 const Home = () => {
 

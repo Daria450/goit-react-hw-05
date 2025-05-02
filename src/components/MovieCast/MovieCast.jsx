@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { fetchCast } from '../../services/tmdb-api';
-import s from './Cast.module.css'
+import s from './MovieCast.module.css'
 
 const Cast = () => {
     const { movieId } = useParams();

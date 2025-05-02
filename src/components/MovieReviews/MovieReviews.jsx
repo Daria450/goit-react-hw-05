@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { fetchMovieReviews } from '../../services/tmdb-api';
 import { useParams } from 'react-router-dom';
-import s from './Reviews.module.css'
+import s from './MovieReviews.module.css'
 
 const Reviews = () => {
 

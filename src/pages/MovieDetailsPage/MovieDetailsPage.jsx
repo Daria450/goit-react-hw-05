@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { fetchMovieById } from '../../services/tmdb-api';
-import s from './MovieDetailc.module.css'
+import s from './MovieDetailsPage.module.css'
 import clsx from 'clsx';
 
 const MovieDetails = () => {
